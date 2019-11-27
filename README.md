@@ -1,6 +1,6 @@
 # I Know You Can See Me
 
-Explore machine learning biases through colorization AI at [https://iknowyoucanseeme.xyz](https://iknowyoucanseeme.xyz) !
+Explore machine learning biases through colorization AI at [https://iknowyoucanseeme.xyz](https://iknowyoucanseeme.xyz) 🤖🎨
 
 # Modern Citation
 
