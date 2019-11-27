@@ -1,0 +1,49 @@
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='../static/style.css'>
+    <script src='../static/client.js'></script>
+</head>
+<body>
+<div>
+    <div class='center'>
+        <div class='title'>I Know You Can See Me 🤖</div>
+        <p>or guessing colors 🎨 with AI.</p>
+        <p>
+            Take a selfie and see if AI can guess the colors!
+        </p>
+        <p>It is a simple way to explore <strong>limits</strong> and <strong>biases</strong> in our contemporary artificial intelligence algorithms.
+        </p>
+        <div class='content'>
+            <div class='no-display'>
+                <input id='file-input'
+                       class='no-display'
+                       type='file'
+                       name='file'
+                       accept='image/*'
+                       onchange='showPicked(this)'>
+            </div>
+            <button class='choose-file-button' type='button' onclick='showPicker()'>Take Selfie</button>
+            <div class='upload-label'>
+                <label id='upload-label'>No image chosen</label>
+            </div>
+            <div>
+                <img id='image-picked' class='no-display' alt='Chosen Image' height='500em'>
+            </div>
+            <div class='analyze'>
+                <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Colorize</button>
+            </div>
+            <div class='result-label'>
+                <label id='result-label'></label>
+            </div>
+            <div class='result-image'>
+                <img id='result-image' class='no-display' alt='Re-colored Image' height='500em'>
+            </div>
+        </div>
+        <p>
+            Psst... Nothing is real, and these images are not saved ✨!
+        </p>
+    </div>
+</div>
+</body>
+</html>

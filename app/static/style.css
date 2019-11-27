@@ -1,0 +1,101 @@
+body {
+    background-color: #272727;
+    color: #eeeeee;
+
+}
+
+.no-display {
+    display: none;
+}
+
+.grey-image {
+    -webkit-filter: grayscale(1); /* Google Chrome, Safari 6+ & Opera 15+ */
+    filter: grayscale(1); /* Microsoft Edge and Firefox 35+ */
+}
+
+.center {
+    margin: auto;
+    padding: 10px 50px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.title {
+    font-size: 60px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    color: #eeeeee;
+}
+
+.content {
+    /*margin-top: 10em;*/
+}
+
+.analyze {
+    margin-top: 5em;
+}
+
+.upload-label {
+    padding: 10px;
+    font-size: 12px;
+}
+
+.result-label {
+    margin-top: 0.5em;
+    padding: 10px;
+    font-size: 13px;
+}
+
+button.choose-file-button {
+    width: 100%;
+    height: 80px;
+    border-radius: 2px;
+    background-color: #000000;
+    border: solid 1px #CB7600;
+    font-size: 40px;
+    color: #CB7600;
+}
+
+button.analyze-button {
+    width: 100%;
+    height: 80px;
+    /*border: solid 1px #CB7600;*/
+    border-radius: 2px;
+    background-color: #CB7600;
+    font-size: 40px;
+    color: #ffffff;
+}
+
+button:focus {
+    outline: 0;
+}
+
+.button-glowing {
+    -webkit-animation: glowing 1500ms infinite;
+    -moz-animation: glowing 1500ms infinite;
+    -o-animation: glowing 1500ms infinite;
+    animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: #CB7600; -webkit-box-shadow: 0 0 3px #CB7600; }
+  50% { background-color: #FFF800; -webkit-box-shadow: 0 0 40px #FFF800; }
+  100% { background-color: #CB7600; -webkit-box-shadow: 0 0 3px #CB7600; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: #CB7600; -moz-box-shadow: 0 0 3px #CB7600; }
+  50% { background-color: #FFF800; -moz-box-shadow: 0 0 40px #FFF800; }
+  100% { background-color: #CB7600; -moz-box-shadow: 0 0 3px #CB7600; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: #CB7600; box-shadow: 0 0 3px #CB7600; }
+  50% { background-color: #FFF800; box-shadow: 0 0 40px #FFF800; }
+  100% { background-color: #CB7600; box-shadow: 0 0 3px #CB7600; }
+}
+
+@keyframes glowing {
+  0% { background-color: #CB7600; box-shadow: 0 0 3px #CB7600; }
+  50% { background-color: #FFF800; box-shadow: 0 0 40px #FFF800; }
+  100% { background-color: #CB7600; box-shadow: 0 0 3px #CB7600; }
+}
