@@ -14,7 +14,7 @@ from starlette.staticfiles import StaticFiles
 import PIL
 import functools
 
-export_file_url = 'https://www.googleapis.com/drive/v3/files/1HZlBbrDA7YWMutTxOX4KYIH59Ew-UnRg?alt=media&key=AIzaSyBf68scFs7oC5OUfPt2H1e70mLOdamfIus'
+export_file_url = 'https://storage.googleapis.com/cv-datasets/other/colorization/ColorizeArtistic_gen.pth'
 export_file_name = 'ColorizeArtistic_gen.pth'
 
 path = Path(__file__).parent
