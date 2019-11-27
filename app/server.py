@@ -2,9 +2,6 @@ import os
 import aiohttp
 import asyncio
 import uvicorn
-from uvicorn.loops.uvloop import uvloop_setup
-# from fastai import *
-# from fastai.vision import *
 from deoldify.visualize import *
 from io import BytesIO
 from starlette.applications import Starlette
@@ -82,7 +79,6 @@ tasks = [asyncio.ensure_future(setup_learner())]
 colorizer = loop.run_until_complete(asyncio.gather(*tasks))[0]
 loop.close()
 
-# colorizer = None
 
 @app.route('/')
 async def homepage(request):
@@ -92,22 +88,25 @@ async def homepage(request):
 
 @app.route('/analyze', methods=['POST'])
 async def analyze(request):
-    # global colorizer
-    # if not colorizer:
-    #     colorizer = await setup_learner()
+    # Read image data from request
     buf = io.BytesIO()
     img_data = await request.form()
     img_bytes = await (img_data['file'].read())
     img = PIL.Image.open(BytesIO(img_bytes))
+    # Correct image orientation if needed
     img = await image_transpose_exif(img)
+    # Rescale image to improve processing speed
     img.thumbnail((1024, 1024))
+    # Convert to grayscale
     img = PIL.ImageOps.grayscale(img)
     img.save(buf, format="JPEG", optimize=True)
     buf.seek(0)
+    # Colorize bw image
     prediction = colorizer.get_transformed_image(buf, render_factor=15)
     buf.seek(0)
     prediction.save(buf, format="JPEG", optimize=True)
     buf.seek(0)
+    # Send result image in json as base64 encoded
     to_send = (b"data:image/jpeg;base64, " + base64.b64encode(buf.read())).decode("utf-8")
     return JSONResponse({'result': to_send})
 
@@ -116,10 +115,3 @@ if __name__ == '__main__':
     if 'serve' in sys.argv:
         port = int(os.environ.get('PORT', 5000))
         uvicorn.run(app=app, host='0.0.0.0', port=port, log_level="info")
-
-
-
-"""
-TODO:
-- Long description text
-"""
