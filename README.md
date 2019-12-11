@@ -28,6 +28,7 @@ Deep Learning model to colorize images are come from the incredible work of [Jas
 
 ## Web App
 ![Web App UI Example](UI_example.png)
+
 Web application is based on the Starter for deploying [fast.ai](https://www.fast.ai) models on the Internet. I highly recommend [deep learning course from FastAI](https://course.fast.ai/) team. They are doing an amazing work on making complex things intuitive and easy to understand.
 
 For more details about web app, please check their repo:  [fast.ai](https://github.com/fastai/fastai) 
